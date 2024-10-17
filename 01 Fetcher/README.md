@@ -29,3 +29,6 @@ Here are some example commands to help you get started:
 C:\Users\localadmin>py C:\InsectScanner\Oliver\fetcher.py "C:\Users\localadmin\Desktop\Paolo Demo\paolo.txt" 02 jpg
 C:\Users\localadmin>py C:\InsectScanner\Oliver\fetcher.py "C:\Users\localadmin\Desktop\Paolo Demo\paolo.txt" 02 png obj jpg
 ```
+
+Good to know:
+The retrieved files are stored in the same directory as the list.
