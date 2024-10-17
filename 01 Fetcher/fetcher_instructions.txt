@@ -1,0 +1,19 @@
+fetcher.py - HOW TO USE
+
+Preparatory steps:
+- have list with identifiers (one per line) ready
+- find the fetcher.py file
+
+1. Open "Command Prompt".
+2. Type "py" followed by whitespace.
+3. Drag the file "fetcher.py" into the Command Prompt window.
+4. Drag the list into the Command Prompt window.
+5. Enter collection number and file type(s) to retrieve.
+
+Examples:
+
+C:\Users\localadmin>py C:\InsectScanner\Oliver\fetcher.py "C:\Users\localadmin\Desktop\Paolo Demo\paolo.txt" 02 jpg
+C:\Users\localadmin>py C:\InsectScanner\Oliver\fetcher.py "C:\Users\localadmin\Desktop\Paolo Demo\paolo.txt" 02 png obj jpg
+
+Good to know:
+The retrieved files are stored in the same directory as the list.
