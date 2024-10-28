@@ -12,10 +12,11 @@ This script is designed to add scalebars to specimen images automatically. It ex
 
 ### Running the Executable
 
-1. **Download and Install**: Ensure that you have the packaged `.exe` file (`scalebar.exe`) available on your Windows machine inside the `dist` folder.
-2. **Position the Executable**: For convenience, you may want to move the `scalebar.exe` file close to the source files you want to use, ideally in the outermost folder that contains all the specimen images.
-3. **Open File Manager**: Navigate to the `dist` folder where the `scalebar.exe` file is located.
-4. **Run the Executable**: Simply double-click the `scalebar.exe` file to run it.
+1. **Download and Install**: Download the `add_scalebars.exe` file by navigating to it in your repository and clicking on the file name. Once open, use the "Download raw file" button with the download symbol in the top right to save it to your computer.
+2. **Position the Executable**: For convenience, place the `add_scalebars.exe` file close to the source files you plan to process, ideally in the outermost folder containing all the specimen images.
+   - **Note**: If you plan to specify a text file with paths to specimen folders, the `add_scalebars.exe` must be located just outside the specimen folders listed in the file so that their relative paths are correct.
+3. **Open File Manager**: Navigate to the location where the `add_scalebars.exe` file is stored (or wherever you chose to move it).
+4. **Run the Executable**: Simply double-click `add_scalebars.exe` to launch the application.
 
 ### Input Parameters
 
@@ -29,6 +30,8 @@ When you run the executable, you will be prompted to enter the path for processi
   
 - **Text File with Paths**: A text file containing paths to specimen folders, either line-separated or comma-separated.
   - Example: `C:\path\to\paths.txt`
+
+**Tip**: After running `add_scalebars.exe`, you can also **drag and drop** the folder or `.txt` file directly into the command line window to quickly input the path.
 
 ### Optional Parameters
 
