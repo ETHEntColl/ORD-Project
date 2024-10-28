@@ -210,6 +210,9 @@ def main():
             verbose=verbose
         )
 
+    # Keep the command window open until the user decides to close it
+    input("Processing complete! Press Enter to exit...")
+
 
 if __name__ == "__main__":
     main()
