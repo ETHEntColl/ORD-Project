@@ -1,8 +1,9 @@
 import os
-import argparse
+
 from PIL import Image, ImageDraw, ImageFont
 from PyPDF2 import PdfReader
 from tqdm.auto import tqdm
+
 
 def extract_object_pixel_pitch(folder_path):
     """
@@ -108,59 +109,105 @@ def parse_folder_list(file_path):
     return folders
 
 
+def prompt_user_for_path():
+    """
+    Prompts the user to provide a parent directory, a single specimen folder, or a text file with folder paths.
+
+    Returns:
+        str: The valid path provided by the user.
+    """
+    while True:
+        path = input(
+            "Please enter the path to one of the following:\n"
+            "- A parent directory containing specimen folders (e.g., '\\path\\to\\parent_directory\\')\n"
+            "- A single specimen folder that contains an 'edof' subdirectory (e.g., '\\path\\to\\single_specimen\\')\n"
+            "- A text file with paths to specimen folders (e.g., '\\path\\to\\paths.txt'):\n"
+        ).strip()
+        if os.path.isdir(path) or (path.endswith('.txt') and os.path.isfile(path)):
+            return path
+        print("Invalid path. Please try again.")
+
+
+def prompt_user_for_optional_arguments():
+    """
+    Prompts the user whether they want to specify optional arguments or use default values.
+
+    Returns:
+        tuple: A tuple containing the optional arguments.
+    """
+    print("\nDo you want to specify custom values for the following optional arguments? (Press Enter for defaults)")
+    response = input("Type 'yes' to specify custom values, or press Enter to use default values: ").strip().lower()
+
+    if response != 'yes':
+        # Return default values
+        return 10, 50, 150, 100, "times.ttf", False
+
+    # Ask for each argument with an option to keep the default
+    scalebar_height = input(f"Scalebar height in pixels (default is 10): ")
+    scalebar_height = int(scalebar_height) if scalebar_height else 10
+
+    x_margin = input(f"X margin from the right edge of the image (default is 50): ")
+    x_margin = int(x_margin) if x_margin else 50
+
+    y_margin = input(f"Y margin from the bottom edge of the image (default is 150): ")
+    y_margin = int(y_margin) if y_margin else 150
+
+    fontsize = input(f"Font size of the text below the scalebar (default is 100): ")
+    fontsize = int(fontsize) if fontsize else 100
+
+    font_style = input(f"Font style for the scalebar text (default is 'times.ttf'): ")
+    font_style = font_style if font_style else "times.ttf"
+
+    verbose = input("Verbose output? (yes/no, default is no): ").strip().lower()
+    verbose = verbose == 'yes' if verbose in ['yes', 'no'] else False
+
+    return scalebar_height, x_margin, y_margin, fontsize, font_style, verbose
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Process specimen folder(s) to add scalebars to images.")
-
-    # One mandatory path argument for folder or text file
-    parser.add_argument("path", type=str, help="Path to a text file with folder paths or a parent folder")
-
-    # Optional argument to specify a single folder directly
-    parser.add_argument("--specimen_folder", action="store_true", help="Treat path as a single specimen folder")
-
-    # Scalebar and styling options
-    parser.add_argument("--scalebar_height", type=int, default=10, help="Height of the scalebar in pixels")
-    parser.add_argument("--x_margin", type=int, default=50, help="X margin from the right edge of the image")
-    parser.add_argument("--y_margin", type=int, default=150, help="Y margin from the bottom edge of the image")
-    parser.add_argument("--fontsize", type=int, default=100, help="Font size of the text below the scalebar")
-    parser.add_argument("--font_style", type=str, default="times.ttf", help="Font style for the scalebar text")
-    parser.add_argument("--verbose", action="store_true", help="Print detailed information during processing")
-
-    args = parser.parse_args()
+    # Prompt user for the input path
+    path = prompt_user_for_path()
 
     # Determine if `path` is a single specimen folder, a parent directory, or a text file of folder paths
     specimen_folders = []
 
-    if args.specimen_folder:
-        # Use the path as a single folder directly
-        specimen_folders.append(args.path)
-    else:
-        # Check if the path is a .txt file or a folder
-        if args.path.endswith(".txt"):
-            # Read folder paths from the text file, supporting both line-separated and comma-separated paths
-            specimen_folders = parse_folder_list(args.path)
-        elif os.path.isdir(args.path):
+    # Determine if the path is a single specimen folder or a parent directory
+    if os.path.isdir(path):
+        # Check for the presence of an "edof" directory
+        if 'edof' in os.listdir(path):
+            # Treat it as a single specimen folder
+            specimen_folders.append(path)
+        else:
             # Treat path as a parent folder and list its subdirectories
             specimen_folders = [
-                os.path.join(args.path, subdir)
-                for subdir in os.listdir(args.path)
-                if os.path.isdir(os.path.join(args.path, subdir))
+                os.path.join(path, subdir)
+                for subdir in os.listdir(path)
+                if os.path.isdir(os.path.join(path, subdir))
             ]
+    else:
+        # Check if the path is a text file
+        if path.endswith('.txt'):
+            # Read folder paths from the text file
+            specimen_folders = parse_folder_list(path)
         else:
-            print("Invalid path. Provide a .txt file or a parent directory.")
+            print("Invalid path. Provide a .txt file or a valid directory.")
             return
+
+    # Prompt for optional arguments
+    (scalebar_height, x_margin, y_margin, fontsize, font_style, verbose) = prompt_user_for_optional_arguments()
 
     # Process each specimen folder with a tqdm progress bar
     for folder in tqdm(specimen_folders, desc="Processing specimen folders", unit="folder"):
-        if args.verbose:
+        if verbose:
             print(f"Starting folder: {folder}")
         process_specimen(
             specimen_folder=folder,
-            scalebar_height=args.scalebar_height,
-            x_margin=args.x_margin,
-            y_margin=args.y_margin,
-            fontsize=args.fontsize,
-            font_style=args.font_style,
-            verbose=args.verbose
+            scalebar_height=scalebar_height,
+            x_margin=x_margin,
+            y_margin=y_margin,
+            fontsize=fontsize,
+            font_style=font_style,
+            verbose=verbose
         )
 
 
