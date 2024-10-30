@@ -8,26 +8,23 @@ This script is designed to automatically add scalebars to specimen images. It ex
 
 ### 1. Running the Executable
 
-1. **Download and Install**: 
-   - Download the `add_scalebars.exe` file from your repository by navigating to it and clicking on the file name.
-   - Once the file opens, click the "Download raw file" button (it has a download symbol) in the top right corner. You may need to click this button twice to successfully save the file to your computer.
+1. **Download**: 
+   1. [Navigate to the `add_scalebars.exe` file in this repository](https://github.com/ETHEntColl/OCR-Project/blob/main/02%20Scalebar/add_scalebars.exe).   
+   2. Click the "Download raw file" button (it has a download symbol) in the top right corner. You may need to click the button twice to successfully save the file to your computer.
 
 2. **Position the Executable**: 
-   - For convenience, place the `add_scalebars.exe` file in a location close to the source files you plan to process. Ideally, it should be in the outermost folder that contains all the specimen images.
-   - **Important Note**: If you plan to use a text file to specify paths to specimen folders, ensure that the `add_scalebars.exe` is located just outside the specimen folders listed in the text file. This is crucial for correct relative path resolution.
+   - If you plan to use a text or CSV file with specific specimen names, place the `add_scalebars.exe` in the parent folder of those specimen folders for correct relative path resolution. Otherwise, you can place it wherever you want.
 
-3. **Open File Manager**: 
-   - Navigate to the folder where you saved the `add_scalebars.exe` file.
-
-4. **Run the Executable**: 
-   - Double-click `add_scalebars.exe` to launch the application. 
+3. **Run the Executable**: 
+   - Double-click `add_scalebars.exe` to launch the executable. 
    - **Note**: You may need to provide permissions for the executable to run since it was downloaded from the internet.
+
 ### 2. Input Parameters
 
-When you run the executable, you will be prompted to enter a path for processing. You can specify one of the following options:
+> **Tip**: The easiest way to enter the path to a folder or file is by **dragging and dropping** it directly from the file browser into the command line window.
 
-> **Tip**: The easiest way to input the path is by **dragging and dropping** the folder or `.txt` file directly into the command line window.
-
+When you run the executable, you will be prompted to enter a path for processing.
+You can specify one of the following options:
 - **Single Specimen Folder**: A folder that contains either an `edof` or `redof` subdirectory along with a `ScanInformation.pdf`.
   - **Example**: `C:\path\to\single_specimen\`
 
