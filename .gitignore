@@ -10,6 +10,7 @@ ETHZ*/
 *.svg
 
 # Ignore all Python test files
-*_tests.py
+02 Scalebar/scalebar_tests.py
+03 Sharpen/sharpen_tests.py
 
 
