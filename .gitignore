@@ -3,7 +3,7 @@ ETHZ*/
 # Ignore all image files
 *.png
 *.jpg
-*.jpeg
+
 *.gif
 *.bmp
 *.tiff
