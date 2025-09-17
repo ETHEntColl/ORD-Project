@@ -1,0 +1,8 @@
+<div id="viewerOut">
+    <p id="name">{{ name }}</p>
+    <model-viewer class="viewer" id="side" src="{{ path }}" camera-controls tone-mapping="neutral" shadow-intensity="0.1" camera-orbit="90deg 90deg 100m" minimumRenderScale="1"></model-viewer>
+    <model-viewer class="viewer" id="bottom" src="{{ path }}" camera-controls tone-mapping="neutral" shadow-intensity="0.1" camera-orbit="-50deg 120deg 100m" minimumRenderScale="1" style="display:none;"></model-viewer>
+    <model-viewer class="viewer" id="top" src="{{ path }}" camera-controls tone-mapping="neutral" shadow-intensity="0.1" camera-orbit="50deg -120deg 100m" minimumRenderScale="1"  style="display:none;"></model-viewer>
+    <div hx-get="/getNext" hx-trigger="every 10s" hx-target="#viewerOut" hx-swap="outerHTML"></div>
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</div>

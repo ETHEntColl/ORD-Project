@@ -1,0 +1,1 @@
+The rotate_obj_blender.pyscript imports all .obj files in blender exports, rotates them and saves the resulting blender project. This assumes all project folders share the same structure, folders that don’t fit this structure get skipped. It also sets the transform orientation to local.
