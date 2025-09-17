@@ -1,4 +1,4 @@
-## Create Preview
+# Thumbnail
 The `create_preview` project creates three predetermined pictures of the glb models. This is allows for an easy quality control. The current implementation uses a flask server. The extracted images all have a black background. To change this we use a Photoshop automation which automatically adds a white background with a subtle gradient and then exports the file again as a JPEG-file. In the end we have three images:
 
 |top-view|bottom_view|side-view|
