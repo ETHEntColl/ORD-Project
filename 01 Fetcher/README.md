@@ -1,4 +1,4 @@
-# fetcher.py - How to Use
+# fetcher.py - How to Use 
 
 ## Preparatory Steps
 1. Ensure you have a list of identifiers ready, with one identifier per line.
