@@ -1,4 +1,4 @@
-# Scalebar Adder for Specimen Images
+# Scalebar Adder for Specimen Images 
 
 **Disclaimer**: This code has only been tested on Windows. Compatibility with other operating systems has not been verified.
 
