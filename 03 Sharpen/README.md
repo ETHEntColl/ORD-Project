@@ -1,6 +1,6 @@
 # Image Sharpening Tool
 
-**Disclaimer**: This code has been tested primarily on Windows. Compatibility with other operating systems is not guaranteed.
+**Disclaimer**: This code has been tested primarily on Windows. Compatibility with other operating systems is not guaranteed. 
 
 This script is designed to enhance image sharpness through a combination of sharpening filters, including Unsharp Mask and High Pass Filter. The tool processes images stored in specimen folders and creates sharpened versions in a separate output directory. It is intended for automated processing of multiple specimen image sets.
 
