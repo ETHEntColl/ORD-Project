@@ -1,4 +1,4 @@
-## GS-viewer-for-quick-testing
+## GS-viewer-for-quick-testing 
 This is a Gaussian Splat Viewer that can be used for testing/debugging. It is based on the GaussianSplats3D viewer by mkkellogg:
 https://github.com/mkkellogg/GaussianSplats3D
 
