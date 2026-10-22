@@ -9,7 +9,7 @@ This script is designed to enhance image sharpness through a combination of shar
 ### 1. Running the Executable
 
 1. **Download**: 
-   1. [Navigate to the `sharpen.exe` file in this repository](https://github.com/ETHEntColl/ORD-Project/blob/main/02%20Scalebar/add_scalebars.exe).   
+   1. [Navigate to the `sharpen.exe` file in this repository](https://github.com/ETHEntColl/ORD-Project/blob/main/03%20Sharpen/sharpen.exe).   
    2. Click the "Download raw file" button (it has a download symbol) in the top right corner. You may need to click the button twice to successfully save the file to your computer.
 
 2. **Position the Executable**: 
