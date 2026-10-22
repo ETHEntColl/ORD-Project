@@ -1,5 +1,7 @@
 # ORD-Project: Tools for using 3D models of natural history specimens
 
+[![DOI](https://zenodo.org/badge/874243001.svg)](https://doi.org/10.5281/zenodo.23566632)
+
 This repository contains six tools developed to make 2D images and 3D models of natural history specimens easier to use, from fetching and preparing images (scale bars, sharpening, thumbnails) to viewing models and exporting them as GLB files with Blender. They were developed after interviews with 27 users of 3D data, and are designed for three groups: scientists and taxonomists who need high-quality, easy-to-handle 3D models; providers of scientific data such as digitization centres and natural history collections; and educators and outreach staff who use 3D models in teaching and exhibitions. The tools were built with specimens from the ETH Zurich Entomological Collection (ETHZ-ENT) and the ETH Earth Science Collections.
 
 This repository is the main software output of the ETH Domain Open Research Data (ORD) Explore project "Enhancing 3D data visualization standards and practices for natural history collections" (2nd call, 09/2024 – 07/2026; main applicant: Prof. Consuelo De Moraes, ETH Zurich).
@@ -50,7 +52,8 @@ See the `README.md` in each folder for step-by-step instructions. A typical work
 
 If you use this software, please cite:
 
-[Authors] (2026). ORD-Project: Tools for using 3D models of natural history specimens. Zenodo. https://doi.org/[DOI]
+[Authors]Felsner C, Greeff M (2026). ORD-Project: Tools for using 3D models of natural history specimens. Zenodo. https://doi.org/10.5281/zenodo.23566632
+
 
 ## Authors and contributors
 
