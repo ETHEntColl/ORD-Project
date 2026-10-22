@@ -52,7 +52,7 @@ See the `README.md` in each folder for step-by-step instructions. A typical work
 
 If you use this software, please cite:
 
-[Authors]Felsner C, Greeff M (2026). ORD-Project: Tools for using 3D models of natural history specimens. Zenodo. https://doi.org/10.5281/zenodo.23566632
+Felsner C, Greeff M (2026). ORD-Project: Tools for using 3D models of natural history specimens. Zenodo. https://doi.org/10.5281/zenodo.23566632
 
 
 ## Authors and contributors
