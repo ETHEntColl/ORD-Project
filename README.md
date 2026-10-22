@@ -56,7 +56,6 @@ If you use this software, please cite:
 
 - Dustin Brunner (`02 Scalebar`, `03 Sharpen`)
 - Si An Oliver Tran (`01 Fetcher`)
-- [further contributors]
 - Christian Felsner, Michael Greeff (project team, ETH Zurich)
 
 ## License
@@ -70,4 +69,4 @@ This project was supported by the Open Research Data Program of the ETH Board.
 
 ## Contact
 
-Entomological Collection, ETH Zurich – [contact email]
+Entomological Collection, ETH Zurich – entomological.collection@usys.ethz.ch
